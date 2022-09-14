@@ -1,32 +1,22 @@
-# Visual Relationship Detection with Language Priors
+# Visual-Relationship-Detection-and-Scene-Graph-Generation-using-Bi-Directional-Gated-Recurren
 
 whole the things i forked from the https://github.com/Prof-Lu-Cewu/Visual-Relationship-Detection and additionally just run the programs files in colab.
 
-Cewu Lu\*, Ranjay Krishna\*, Michael Bernstein, Li Fei-Fei, 
-European Conference on Computer Vision (ECCV), 2016, 
-**(oral)**. (\* = indicates equal contribution)
 
-## Citation
-```
-@InProceedings{lu2016visual,
-   title = {Visual Relationship Detection with Language Priors},
-   author = {Lu, Cewu and Krishna, Ranjay and Bernstein, Michael and Fei-Fei, Li},
-   booktitle = {European Conference on Computer Vision},
-   year = {2016},
- }
- ```
+
+
 
 ## Introduction
-Visual Relationship Detection is a task where the input is a simple image and the model is supposed to predict a set of relationships that are true about the image. There relationships are in the form of <subject-predicate-object>. Visual Relationship Detection is a natural extension to object detection where we now not only detect the objects in an image but predict how they are interacting with one another.
+Visual relationship detection is an intermediate image understanding task that detects two objects and classifies a predicate that explains the relationship between two objects in an image. Relations among entities play a central role in image understanding. Due to the complexity of modeling (subject, predicate, object) relation triplets, it is crucial to develop a model that cannot only recognize seen relations, but also generalize to unseen cases. Inspired by a previously proposed visual translation embedding model,the context-augmented translation embedding model that can capture both common and rare relations. The previous Visual translation embedding model maps entities and predicates into a low-dimensional embedding vector space where the predicate is interpreted as a translation vector between the embedded features of the bounding box regions of the subject and the object. This model additionally incorporates the contextual information captured by the bounding box of the union of the subject and the object, and learns the embeddings guided by the constraint predicate,union(subject, object). In addition to the framework combined with a language model that learns which relationships are more suitable between pairs of object classes. The model solves the scene graph inference problem using the standard Bi-GRU model and learns to iteratively improve its predictions. Our joint model can take advantage of contextual cues to make better predictions on objects and their relationships from an image.In this work, it is explicitly model the objects and their relationships using scene graphs, a visually-grounded graphical structure of an image. Where in the graph the node represents the objects and the directed vertex represents the relationship among the nodes. The experiments show that our model significantly outperforms previous methods on generating scene graphs using Visual Genome dataset.
 
-Detailed description of the task and our model is provided in [our paper at ECCV 2016](http://cs.stanford.edu/people/ranjaykrishna/vrd/).
+
 
 ##Licence
 
 This software is being made available for research purpose only. Check LICENSE file for details.
 
 ## System Requirements
-This software is tested on Ubuntu 14.04 LTS (64bit).
+This software is tested on Ubuntu 14.04 LTS (64bit) and Google Colab.
 
 MATLAB (tested with 2014b on 64-bit Linux)
 [Caffe](http://caffe.berkeleyvision.org/installation.html#prequequisites)
@@ -47,11 +37,14 @@ For each image, we provide our VGG based object detection results (object catego
 ```
 
 ## Run Demo file in colab :
-Follow the following steps to run the program :
+
+I.First Unzip the Project_Final.zip file where you can get the Project_Final.ipython file to get the programs 
+
+II.Follow the following steps to run the program :
 
 1.clone the repository. 
 2.move out the files according to the screenshot shows the places.
-3.install octave using. 
+3.install octave  in colab using. 
 ```
 !apt install octave
 ```
@@ -70,4 +63,4 @@ note: it will run contiously for all the images.
 a = !octave -W your_filename.m
 print(a)
 ```
-Thankyou sir,(https://github.com/Prof-Lu-Cewu)
+@Thankyou  https://github.com/Prof-Lu-Cewu 
